@@ -1,0 +1,44 @@
+server:
+  port: 2001
+
+spring:
+  application:
+    name: user-service
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:13306/demo_cloud?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&useSSL=false&allowPublicKeyRetrieval=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 5 # 最小空闲连接数
+      maximum-pool-size: 15 #最大连接数
+      auto-commit: true
+      connection-timeout: 30000 # 最大毫秒数
+      max-lifetime: 1800000 # 关闭后最长生命周期
+      connection-test-query: select 1
+      idle-timeout: 300000 # 空闲最长时间
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        serviceName: ${spring.application.name}
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*" # 开通度量指标
+
+info:
+  name: ${spring.application.name}
+
