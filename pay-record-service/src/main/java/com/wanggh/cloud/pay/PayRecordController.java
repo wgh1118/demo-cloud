@@ -1,4 +1,4 @@
-package com.wanggh.cloud.order;
+package com.wanggh.cloud.pay;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

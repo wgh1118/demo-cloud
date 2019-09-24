@@ -1,4 +1,4 @@
-package com.wanggh.cloud.order;
+package com.wanggh.cloud.pay;
 
 import lombok.Data;
 import org.springframework.data.annotation.CreatedDate;

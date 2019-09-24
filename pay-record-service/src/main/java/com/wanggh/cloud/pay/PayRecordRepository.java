@@ -1,4 +1,4 @@
-package com.wanggh.cloud.order;
+package com.wanggh.cloud.pay;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

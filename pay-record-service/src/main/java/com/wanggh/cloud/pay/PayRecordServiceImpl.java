@@ -1,4 +1,4 @@
-package com.wanggh.cloud.order;
+package com.wanggh.cloud.pay;
 
 import org.springframework.stereotype.Service;
 
