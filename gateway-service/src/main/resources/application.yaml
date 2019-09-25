@@ -1,0 +1,41 @@
+server:
+  port: 2000
+
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: router-user
+          uri: lb://user-service
+          predicates:
+            - Path=/api-user/**
+          filters:
+            - StripPrefix= 1 # 加上StripPrefix=1,去掉api-user,只保留**部分
+        - id: router-pay-record
+          uri: lb://pay-record-service
+          predicates:
+            - Path=/api-pay-record/**
+          filters:
+            - StripPrefix= 1
+
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        serviceName: ${spring.application.name}
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*" # 开通度量指标
+info:
+  name: ${spring.application.name}

@@ -8,14 +8,25 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>payRecord-service</artifactId>
+    <artifactId>pay-record-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>payRecord-service</name>
+    <name>pay-record-service</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
         <java.version>1.8</java.version>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+    </dependencies>
 
     <dependencyManagement>
         <dependencies>
@@ -28,6 +39,7 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
     <build>
         <plugins>
             <plugin>

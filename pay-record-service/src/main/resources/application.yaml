@@ -1,9 +1,9 @@
 server:
-  port: 2002
+  port: 2003
 
 spring:
   application:
-    name: order-service
+    name: pay-record-service
   jpa:
     generate-ddl: false
     show-sql: true
@@ -30,6 +30,7 @@ spring:
       discovery:
         serviceName: ${spring.application.name}
 
+
 management:
   endpoint:
     health:
@@ -40,3 +41,7 @@ management:
         include: "*" # 开通度量指标
 info:
   name: ${spring.application.name}
+
+feign:
+  hystrix:
+    enabled: true
