@@ -1,9 +1,9 @@
-server:
-  port: 2001
-
 spring:
-  application:
-    name: user-service
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
   jpa:
     generate-ddl: false
     show-sql: true
@@ -29,6 +29,10 @@ spring:
       port: 8500
       discovery:
         serviceName: ${spring.application.name}
+    bus:
+      enabled: true
+      trace:
+        enabled: true
 
 management:
   endpoint:
@@ -37,7 +41,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*" # 开通度量指标
+        include: bus-refresh # 开通度量指标
 
 info:
   name: ${spring.application.name}

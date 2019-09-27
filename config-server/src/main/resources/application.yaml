@@ -1,1 +1,17 @@
-
+server:
+  port: 9999
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/wgh1118/demo-cloud-config
+          search-paths: /
+      label: master
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        serviceName: ${spring.application.name}

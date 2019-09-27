@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: user-service
+  cloud:
+    config:
+      label: master
+      profile: dev
+      uri: http://localhost:9999/
+server:
+  port: 2000
