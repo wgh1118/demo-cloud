@@ -1,0 +1,15 @@
+customize:
+  author: wanggh
+server:
+  port: 4100
+spring:
+  profiles:
+    active: dev
+  application:
+    name: nacos-user
+  cloud:
+    nacos:
+      config:
+        file-extension: yaml
+        prefix: application
+        server-addr: localhost:8848
