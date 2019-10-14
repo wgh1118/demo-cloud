@@ -1,0 +1,18 @@
+server:
+  port: 4900
+spring:
+  application:
+    name: es
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch_wanggh
+      cluster-nodes: localhost:9300
+      repositories:
+        enabled: true
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        service: ${spring.application.name}
+

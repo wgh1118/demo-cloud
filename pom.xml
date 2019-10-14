@@ -17,6 +17,7 @@
         <module>nacos-order</module>
         <module>nacos-gateway</module>
         <module>tx</module>
+        <module>es</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>
