@@ -18,6 +18,8 @@
         <module>nacos-gateway</module>
         <module>tx</module>
         <module>es</module>
+        <module>authorization</module>
+        <module>authentication</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>
