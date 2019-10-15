@@ -5,11 +5,6 @@ import com.wanggh.cloud.es.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-/**
- * @author liuwg-a
- * @date 2018/9/18 10:43
- * @description
- */
 @RequestMapping("/users")
 @RestController
 public class UserController {
