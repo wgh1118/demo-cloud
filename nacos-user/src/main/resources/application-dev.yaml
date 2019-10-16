@@ -23,6 +23,19 @@ spring:
       discovery:
         server-addr: localhost:8848
         service: ${spring.application.name}
+
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://localhost:9098/current
+    client:
+      id: user-client
+      client-id: test_client
+      client-secret: test_secret
+      access-token-uri: http://localhost:9000/oauth/token
+      grant-type:
+      scope: read
+
 tx-lcn:
   client:
     manager-address: 127.0.0.1:8070

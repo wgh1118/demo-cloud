@@ -1,5 +1,5 @@
 server:
-  port: 4100
+  port: 9000
 spring:
   security:
     oauth2:

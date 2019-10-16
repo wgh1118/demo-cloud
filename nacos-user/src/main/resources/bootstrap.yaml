@@ -1,5 +1,6 @@
 customize:
   author: wanggh
+jwt: 123456
 server:
   port: 4100
 spring:
