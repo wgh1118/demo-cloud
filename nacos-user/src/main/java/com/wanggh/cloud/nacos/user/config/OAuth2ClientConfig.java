@@ -29,6 +29,8 @@ public class OAuth2ClientConfig {
 
     @Bean
     public OAuth2RestTemplate clientCredentialsRestTemplate() {
-        return new OAuth2RestTemplate(clientCredentialsResourceDetails());
+        // OAuth2RestTemplate oAuth2RestTemplate = new OAuth2RestTemplate(clientCredentialsResourceDetails())
+
+        return new OAuth2RestTemplate(clientCredentialsResourceDetails(), new DefaultOAuth2ClientContext());
     }
 }

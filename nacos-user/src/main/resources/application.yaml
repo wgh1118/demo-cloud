@@ -1,4 +1,8 @@
+server:
+  port: 4100
 spring:
+  application:
+    name: nacos-user
   jpa:
     generate-ddl: false
     show-sql: true
@@ -27,15 +31,16 @@ spring:
 security:
   oauth2:
     resource:
-      user-info-uri: http://localhost:9098/current
+      user-info-uri: http://localhost:9000/current
     client:
       id: user-client
       client-id: test_client
       client-secret: test_secret
       access-token-uri: http://localhost:9000/oauth/token
-      grant-type:
+      user-authorization-uri: http://localhost:9000/oauth/authorize
+      grant-type: client_credentials,authorization_code,password,refresh_token,implicit
       scope: read
-
+      authentication-scheme: form
 tx-lcn:
   client:
     manager-address: 127.0.0.1:8070
