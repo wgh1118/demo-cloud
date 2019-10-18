@@ -32,6 +32,9 @@ security:
   oauth2:
     resource:
       user-info-uri: http://localhost:9000/current
+      token-info-uri: http://localhost:9000/oauth/check_token
+    authorization:
+      check-token-access: http://localhost:9000/oauth/check_token
     client:
       id: user-client
       client-id: test_client
